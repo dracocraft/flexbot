@@ -32,28 +32,28 @@ if (db.has(`prefix_${member.guild.id}`) === false) {
   //Tag Sistemi
     let tag = await db.fetch(`tagB_${member.guild.id}`);
     var tagK = await db.fetch(`tagKanal_${member.guild.id}`);
-    var tagKD = await `${member.guild.channels.get(db.fetch(`tagKanal_${member.guild.id}`)) ? "var" : "yok"}`;
+    var tagKD = await `${member.guild.channels.get(db.fetch(`tagKanal_${member.guild.id}`)) ? "var" : "No"}`;
   if (db.has(`tagB_${member.guild.id}`) === true) {
 member.setNickname(`${tag} ${member.user.username}`)
   
 
   if(db.has(`tagKanal_${member.guild.id}`) === true) {
     if(tagKD === "var") {
-      member.guild.channels.get(tagK).send(`**${member.user.tag}** to \`${db.fetch(`tagB_${member.guild.id}`)}\` By giving the tag set as, the user's name is \`${member.nickname || `${db.fetch(`tagB_${member.guild.id}`)} ${member.user.username}`}\` is set to!`)
+      member.guild.channels.get(tagK).send(`**${member.user.tag}** a \`${db.fetch(`tagB_${member.guild.id}`)}\`Al dar la etiqueta establecida como, el nombre del usuario es \`${member.nickname || `${db.fetch(`tagB_${member.guild.id}`)} ${member.user.username}`}\` se establece!`)
   }}};
 //Sayaç
   if (db.has(`sayac_${member.guild.id}`) === true) {
     if (db.has(`sKanal_${member.guild.id}`) === true) {
     const channel = db.fetch(`sKanal_${member.guild.id}`)
-    member.guild.channels.get(channel).send(`**${member.user.tag}** Joined the server! \`${db.fetch(`sayac_${member.guild.id}`)}\` stop being a member \`${db.fetch(`sayac_${member.guild.id}`) - member.guild.members.size}\` member remained!`)
+    member.guild.channels.get(channel).send(`**${member.user.tag}** Se unio al servidor! \`${db.fetch(`sayac_${member.guild.id}`)}\` deja de ser un miembro \`${db.fetch(`sayac_${member.guild.id}`) - member.guild.members.size}\`º miembro!`)
     }};
   
   //Otorol
   if (db.has(`otoR_${member.guild.id}`) === true) {
   var rol = member.guild.roles.get(db.fetch(`otoR_${member.guild.id}`));
-  var rolD = `${member.guild.roles.get(db.fetch(`otoR_${member.guild.id}`)) ? "var" : "yok"}`;
+  var rolD = `${member.guild.roles.get(db.fetch(`otoR_${member.guild.id}`)) ? "var" : "No"}`;
   
-  var kanalD = `${member.guild.channels.get(db.fetch(`otoRK_${member.guild.id}`)) ? "var" : "yok"}`;
+  var kanalD = `${member.guild.channels.get(db.fetch(`otoRK_${member.guild.id}`)) ? "var" : "No"}`;
     
     
   if(rolD === "var") {
@@ -62,7 +62,7 @@ member.setNickname(`${tag} ${member.user.username}`)
   
     if (db.has(`otoRK_${member.guild.id}`) === true) {
       if(kanalD === "var"){
-    member.guild.channels.get(db.fetch(`otoRK_${member.guild.id}`)).send(`**${member.user.tag}** has been successfully set to an automatic role **${rol.name}** The role was given!`)
+    member.guild.channels.get(db.fetch(`otoRK_${member.guild.id}`)).send(`**${member.user.tag}** se ha configurado correctamente en un rol automático **${rol.name}** Sera el rol dado!`)
   }}}};
   
 };

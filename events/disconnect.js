@@ -1,3 +1,3 @@
 module.exports = client => {
-  console.log(`Vô hiệu hóa! ${new Date()}`);
+  console.log(`Desactivar! ${new Date()}`);
 };

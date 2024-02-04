@@ -1,3 +1,3 @@
 module.exports = client => {
-  console.log(`Restarting, Reis ${new Date()}`);
+  console.log(`Reiniciando, Reis ${new Date()}`);
 };

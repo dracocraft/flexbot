@@ -141,7 +141,7 @@ client.once('ready', () => {
     client.user.setPresence({
         status: 'available',
         activity: {
-            name: 'ĐỨC LOVE PHƯƠNG',
+            name: 'Los servidores doxxeados',
             type: 'WATCHING',
             url: 'https://discord.com'
         }
@@ -154,12 +154,12 @@ client.once('ready', () => {
     fs.writeFileSync('proxies.txt', ' ');
     const request = https.get(url, function(response) {
         response.pipe(file)
-        console.log(`[${moment.utc(Date.now())}] [*] Cập thành công từ cơ sở dữ liệu proxy.`)
+        console.log(`[${moment.utc(Date.now())}] [*] Actualizado exitosamente desde la base de datos proxy.`)
     });
     const embed = new Discord.MessageEmbed()
     .setColor('RANDOM')
     .setTitle(version)
-	.setDescription(`Proxy được cài đặt trong tập tin ${file.path}`)
+	.setDescription(`Los servidores proxy están instalados en el archivo ${file.path}`)
     channel.send(embed)
       }, 600 * 1000);
 });
