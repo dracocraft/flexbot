@@ -16,7 +16,7 @@ try:
     s4_read = f.read()
     f.close()
 except:
-    print('Đang tạo socks4.txt')
+    print('Creando socks4.txt')
     open('socks4.txt', 'w').write('')
     f = open('socks4.txt', 'r')
     s4_read = f.read()
@@ -26,7 +26,7 @@ except:
 #!Socks4
 print()
 sleep(1)
-print('Đang tìm kiếm socks4...')
+print('Buscando proxy shocks4...')
 
 with open('socks4.txt', 'a') as file:
     lol = 0
@@ -93,7 +93,7 @@ with open('socks4.txt', 'a') as file:
         if lol == 1: continue
         file.write('\n' + i)
 
-print('Thành Công!')
+print('Exito!')
 
 r = requests.get(f'https://api.proxyscrape.com/v2/?request=getproxies&protocol=socks4&timeout=10000&country=all', headers=HEADERS)
 soup = BS(r.content, 'html.parser')
@@ -110,5 +110,5 @@ with open('socks4.txt', 'a') as file:
         if lol == 1: continue
         file.write('\n' + i)
 
-print('Thành công!')
+print('Exito!')
 os.rename('socks4.txt', 'proxies.txt')

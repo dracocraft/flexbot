@@ -1,7 +1,7 @@
 const request = require('node-superfetch');
 const crypto = require('crypto');
-const yes = ['evet', 'kabul ediyorum', 'ediyorum', 'evt'];
-const no = ['hayır', 'kabul etmiyorum', 'etmiyorum', 'hyr'];
+const yes = ['si', 'estoy de acuerdo', 'sí', 'posiblemente'];
+const no = ['no', 'no acepto', 'yo no', 'alquilar'];
 
 class ek {
 	static delay(ms) {
@@ -19,7 +19,7 @@ class ek {
 		return arr;
 	}
 
-	static list(arr, conj = 'and') {
+	static list(arr, conj = 'y') {
 		const len = arr.length;
 		return `${arr.slice(0, -1).join(', ')}${len > 1 ? `${len > 2 ? ',' : ''} ${conj} ` : ''}${arr.slice(-1)}`;
 	}
@@ -43,7 +43,7 @@ class ek {
 		if (arr.length > maxLen) {
 			const len = arr.length - maxLen;
 			arr = arr.slice(0, maxLen);
-			arr.push(`${len} more...`);
+			arr.push(`${len} mas...`);
 		}
 		return arr;
 	}
@@ -51,7 +51,7 @@ class ek {
 	static base64(text, mode = 'encode') {
 		if (mode === 'encode') return Buffer.from(text).toString('base64');
 		if (mode === 'decode') return Buffer.from(text, 'base64').toString('utf8') || null;
-		throw new TypeError(`${mode} is not a supported base64 mode.`);
+		throw new TypeError(`${mode} no es un modo base64 compatible.`);
 	}
 
 	static hash(text, algorithm) {
@@ -82,7 +82,7 @@ class ek {
 		return today;
 	}
 
-	static async awaitPlayers(msg, max, min, { text = 'join game', time = 30000 } = {}) {
+	static async awaitPlayers(msg, max, min, { text = 'unirse al juego', time = 30000 } = {}) {
 		const joined = [];
 		joined.push(msg.author.id);
 		const filter = res => {
