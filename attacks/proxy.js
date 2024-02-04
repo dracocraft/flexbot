@@ -21,17 +21,17 @@ module.exports.run = async (client, message, args) => {
 			var exec = require('child_process').exec
 				exec(`python3 proxy.py`, (error, stdout, stderr) => {
 			});
-			console.log(`[${moment.utc(Date.now())}] [*] Thiếp lập tệp proxy!`)
+			console.log(`[${moment.utc(Date.now())}] [*] Configurar proxy!`)
 			const embed = new Discord.MessageEmbed()
-			.setTitle("CÀI ĐẶT THÀNH CÔNG!")
+			.setTitle("Instalacion exiosa!")
 			.setColor('RANDOM')
-			.setDescription(`Proxy đã được thiếp lập trong tệp: **proxies.txt**`)
+			.setDescription(`El proxy se ha configurado en el archivo: **proxies.txt**`)
 			message.channel.send(embed)
 			message.react('✅');
 			return;
 		}
 		if (!urlRegex.test(url)) {
-            message.reply("URL không hợp lệ.");
+            message.reply("URL invalida.");
 			message.react('❌');
             return;
         } else {
@@ -39,12 +39,12 @@ module.exports.run = async (client, message, args) => {
 			fs.writeFileSync('proxies.txt', ' ');
 			const request = https.get(url, function(response) {
 				response.pipe(file)
-				console.log(`[${moment.utc(Date.now())}] [*] Thiếp lập tệp proxy!`)
+				console.log(`[${moment.utc(Date.now())}] [*] Configurar archivo proxy!`)
 			});
 			const embed = new Discord.MessageEmbed()
-			.setTitle("CÀI ĐẶT THÀNH CÔNG!")
+			.setTitle("Instalacion exitosa!")
 			.setColor('RANDOM')
-			.setDescription(`Proxy đã được thiếp lập trong tệp: **proxies.txt**`)
+			.setDescription(`El proxy se ha configurado en el archivo: **proxies.txt**`)
 			message.channel.send(embed)
 			message.react('✅');
 		}

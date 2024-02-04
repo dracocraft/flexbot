@@ -14,10 +14,10 @@ var img = ayarlar.img;
 if (message.channel.id != room) {
 	return;
   }
-console.log('Dùng lệnh hiện phiên bản BOT:' +  message.guild.id)
+console.log('Comando ver versiones en:' +  message.guild.id)
 const embed = new Discord.MessageEmbed()
 	.setColor('RANDOM')
-	.setTitle("PHIÊN BẢN BOT")
+	.setTitle("Versiones")
 	.setDescription("")
 	.addFields(
 		{ name: '1.19', value: '759', inline: true },
@@ -45,7 +45,7 @@ const embed = new Discord.MessageEmbed()
 		{ name: '1.9.X', value: '110', inline: true },
 		{ name: '1.8.X', value: '47', inline: true },
 	)
-	.setFooter('© » FlexBOT 2022-2023', img)
+	.setFooter('© » Penta DDOX 2024-2024', img)
 	.setThumbnail("")
  message.channel.send(embed);
  message.react('✅');
@@ -60,6 +60,6 @@ exports.conf = {
 
 exports.help = {
   name: 'protocols',
-  description: 'Lệnh phiên bản BOT',
+  description: 'Versiones',
   usage: 'protocols'
 }

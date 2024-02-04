@@ -16,12 +16,12 @@ var img = ayarlar.img;
 	var exec = require('child_process').exec
 		exec(`pkill 'java'`, (error, stdout, stderr) => {
 	});
-	console.log('Dừng lại tất cả cuộc tấn công:' +  message.guild.id)
+	console.log('Detenidos todos los ataques:' +  message.guild.id)
 	const embed = new Discord.MessageEmbed()
 		.setColor('RANDOM')
 		.setTitle(version)
-		.setDescription("TẤT CẢ CUỘC TẤN CÔNG ĐÃ DỪNG LẠI!")
-		.setFooter('© » FlexBOT 2022-2023', img)
+		.setDescription("Todos los ataques han parado!")
+		.setFooter('© » Penta DDOX 2024-2024', img)
 		.setThumbnail("")
 	 message.channel.send(embed);
 	 message.react('✅');
@@ -36,6 +36,6 @@ exports.conf = {
 
 exports.help = {
   name: 'stop',
-  description: 'Lệnh dừng lại',
+  description: 'Orden de parar',
   usage: 'stop'
 }

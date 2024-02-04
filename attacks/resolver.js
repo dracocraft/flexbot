@@ -14,9 +14,9 @@ if (message.channel.id != room) {
 if(!args[0]) {
     const embed = new Discord.MessageEmbed()
       .setColor('RANDOM')
-      .setTitle('CẢNH BÁO')
-      .setDescription("`Vui lòng nhập địa chỉ IP`")
-      .setFooter('© » FlexBOT 2022-2023', img)
+      .setTitle('ADVERTENCIA')
+      .setDescription("`Porfavor ingrese la IP`")
+      .setFooter('© » Penta DDOX 2024-2024', img)
    message.channel.send(embed);
    message.react('❌');
    return;
@@ -36,7 +36,7 @@ const request = https.request(options, response => {
     response.on('end', () => {
         resp = JSON.parse(str);
         if(!resp.hostname) {
-            message.channel.send('Không tìm thấy địa chỉ IP: ' + args[0]);
+            message.channel.send('IP no encontrada: ' + args[0]);
             return;
         }
         //create answer message with default offline data
@@ -46,39 +46,39 @@ const request = https.request(options, response => {
             thumbnail: {
                 url: 'https://api.mcsrvstat.us/icon/' + args[0]
             },
-            fields: [{ name: 'Trạng thái', value: 'Không tín hiệu' }],
+            fields: [{ name: 'Estado', value: 'Apagado' }],
             image: {
                 url: 'https://api.mcsrvstat.us/icon/' + args[0]
             },
             footer: {
-                text: '© » FlexBOT 2022-2023'
+                text: '© » Penta DDOX 2024-2024'
             }
         };
         //fill with data if it's online
         if(resp.online) {
-            embed.fields[0].value = 'Trực tuyến';
+            embed.fields[0].value = 'Online';
             embed.fields.push({
-                name: 'Địa Chỉ',
+                name: 'IP',
                 value: resp.ip,
                 inline: true
             });
             embed.fields.push({
-                name: 'Cổng',
+                name: 'Puerto',
                 value: resp.port,
                 inline: true
             });
             embed.fields.push({
                 name: 'MOTD',
-                value: (resp.motd) ? resp.motd.clean.join('\n') : 'Thiếu',
+                value: (resp.motd) ? resp.motd.clean.join('\n') : 'MOTD',
                 inline: true
             });
             embed.fields.push({
-                name: 'Người chơi',
+                name: 'Jugadores',
                 value: resp.players.online + '/' + resp.players.max,
                 inline: true
             });
             embed.fields.push({
-                name: 'Phiên bản',
+                name: 'Version',
                 value: resp.protocol,
                 inline: true
             });
@@ -91,7 +91,7 @@ const request = https.request(options, response => {
 //error handling
 request.on('error', err => {
     console.log(err);
-    message.channel.send('Không thể lấy thông tin máy chủ!');
+    message.channel.send('No se pudo obtener información del servidor!');
 	message.react('❌');
 })
 //close request
@@ -108,6 +108,6 @@ exports.conf = {
   
   exports.help = {
     name: 'resolver',
-    description: 'Özel',
+    description: 'Especial',
     usage: 'resolver'
   }

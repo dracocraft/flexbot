@@ -14,7 +14,7 @@ var img = ayarlar.img;
 if (message.channel.id != room) {
 	return;
   }
-console.log('Xem tên phương pháp tấn công:' +  message.guild.id)
+console.log('Ver nombre del método de ataque:' +  message.guild.id)
 const embed = new Discord.MessageEmbed()
 	.setColor('RANDOM')
 	.setDescription(`overload, cpudowner, cpurip, tcpkiller, joinmotd, botjoiner, joinkiller, nullping, nettydowner ,join ,aegis ,nantibot ,handshake , bungeesmasher, killnet, spigot, bye`)
@@ -31,6 +31,6 @@ exports.conf = {
 
 exports.help = {
   name: 'methods',
-  description: 'Phương Pháp Tấn Công',
+  description: 'Métodos de ataque',
   usage: 'methods'
 }
