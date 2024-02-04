@@ -20,6 +20,9 @@ const embed = new Discord.MessageEmbed()
 	.setTitle("Versiones")
 	.setDescription("")
 	.addFields(
+		{ name: '1.20.2', value: '764', inline: true },
+		{ name: '1.20.1', value: '763', inline: true },
+		{ name: '1.20', value: '763', inline: true },
 		{ name: '1.19', value: '759', inline: true },
 		{ name: '1.18.2', value: '758', inline: true },
 		{ name: '1.18.X', value: '757', inline: true },
