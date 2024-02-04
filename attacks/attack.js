@@ -201,7 +201,7 @@ if(args[2] === "tcpkiller" || args[2] === "spigot" || args[2] === "bye" || args[
 		   .replace("cpurip", "cpurip");
 			   
 		var exec = require('child_process').exec
-			exec(`java -Dperdelay=5000 -Ddelay=1 -Drmnwp=false -jar FLEXBOT.jar ${host} ${protocol} ${chetmemay} 60 -1`, (error, stdout, stderr) => {
+			exec(`java -XX:MaxRAMPercentage=50 -Dperdelay=5000 -Ddelay=1 -Drmnwp=false -jar FLEXBOT.jar ${host} ${protocol} ${chetmemay} 60 -1`, (error, stdout, stderr) => {
 		});
 
 	var miniflex = methods.replace("overload", "Overload")
